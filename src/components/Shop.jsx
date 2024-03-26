@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Products } from "../data/productList.js";
+import { Products } from "../data/producs.js";
 import ProductList from "./shop/ProductList";
 import ShopHeader from "./shop/ShopHeader";
 
