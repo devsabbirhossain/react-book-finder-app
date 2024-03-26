@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Products } from "../data/producs.js";
-import ProductList from "./shop/ProductList";
-import ShopHeader from "./shop/ShopHeader";
+import ProductList from "./Shop/ProductList";
+import ShopHeader from "./Shop/ShopHeader";
 
 const Shop = () => {
   const [products, setProducts] = useState(Products);
