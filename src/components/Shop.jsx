@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Products } from "../data/products.js";
+import { allProducts } from "../data/products.js";
 import ProductList from "./Shop/ProductList";
 import ShopHeader from "./Shop/ShopHeader";
 
 const Shop = () => {
-  const [products, setProducts] = useState(Products);
+  const [products, setProducts] = useState(allProducts);
 
   function handleOnFav(productId) {
     const productsIndex = products.findIndex(
@@ -66,6 +66,17 @@ const Shop = () => {
           return -1;
         }
         if (a.publicationYear < b.publicationYear) {
+          return 1;
+        }
+        return 0;
+      });
+      setProducts([...sortingProduct]);
+    } else {
+      const sortingProduct = products.sort((a, b) => {
+        if (a.id < b.id) {
+          return -1;
+        }
+        if (a.publicationYear > b.publicationYear) {
           return 1;
         }
         return 0;

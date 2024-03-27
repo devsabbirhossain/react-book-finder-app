@@ -6,7 +6,7 @@ const SortProduct = ({ value }) => {
         name="sortBy"
         id="sortBy"
         onChange={() => value(event.target.value)}>
-        <option value="">Sort</option>
+        <option value="">---Select Sort Option---</option>
         <option value="name_asc">Name (A-Z)</option>
         <option value="name_desc">Name (Z-A)</option>
         <option value="year_asc">Publication Year (Oldest)</option>

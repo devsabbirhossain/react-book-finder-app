@@ -1,4 +1,4 @@
-export const Products = [
+export const allProducts = [
   {
     id: "1",
     name: "JavaScript and Jquery",
