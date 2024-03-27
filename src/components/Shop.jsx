@@ -23,9 +23,59 @@ const Shop = () => {
     );
     setProducts([...filterProducts]);
   }
+
+  function handleSorting(sortingType) {
+    if (sortingType === "name_desc") {
+      const sortingProduct = products.sort((a, b) => {
+        if (a.name > b.name) {
+          return -1;
+        }
+        if (a.name < b.name) {
+          return 1;
+        }
+        return 0;
+      });
+
+      setProducts([...sortingProduct]);
+    } else if (sortingType === "name_asc") {
+      const sortingProduct = products.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      });
+
+      setProducts([...sortingProduct]);
+    } else if (sortingType === "year_asc") {
+      const sortingProduct = products.sort((a, b) => {
+        if (a.publicationYear < b.publicationYear) {
+          return -1;
+        }
+        if (a.publicationYear > b.publicationYear) {
+          return 1;
+        }
+        return 0;
+      });
+      setProducts([...sortingProduct]);
+    } else if (sortingType === "year_desc") {
+      const sortingProduct = products.sort((a, b) => {
+        if (a.publicationYear > b.publicationYear) {
+          return -1;
+        }
+        if (a.publicationYear < b.publicationYear) {
+          return 1;
+        }
+        return 0;
+      });
+      setProducts([...sortingProduct]);
+    }
+  }
   return (
     <main className="my-10 lg:my-14">
-      <ShopHeader onSearch={handleSearch} />
+      <ShopHeader onSearch={handleSearch} onSort={handleSorting} />
       <ProductList products={products} onFav={handleOnFav} />
     </main>
   );
